@@ -88,7 +88,7 @@ ColorLUT::~ColorLUT()
 int ColorLUT::generate(ColorModel *model, const Frame8 &frame, const RectA &region)
 {
     Fpoint meanVal;
-    float angle, pangle, pslope, meanSat;
+    float angle, pangle, pslope, meanSat; //mm angle etc. prob refers to u-v-space, not image space...
     float yi, istep, s, xsat, sat;
     int result;
 
@@ -98,8 +98,13 @@ int ColorLUT::generate(ColorModel *model, const Frame8 &frame, const RectA &regi
 
     m_hpixelSize /= sizeof(HuePixel);
 
+	//mm get the huepixels for the requested region:
     map(frame, region);
+	
+	//mm find mean u and v of REGION:
     mean(&meanVal);
+	
+	//mm calculate the color model (hueLines etc.) from the u and v values in the region:
     angle = atan2(meanVal.m_y, meanVal.m_x);
     Fpoint uvec(cos(angle), sin(angle));
 
@@ -169,7 +174,11 @@ int ColorLUT::generate(ColorModel *model, const Frame8 &frame, const RectA &regi
 
 void ColorLUT::map(const Frame8 &frame, const RectA &region)
 {
-    uint32_t x, y, r, g1, g2, b, count;
+    //mm frame is the image frame from the camera
+	//mm region specifies coordinates in the frame
+	//mm hence, below, the relevant PIXELS are obtained by extracting the REGION from the FRAME.
+	
+	uint32_t x, y, r, g1, g2, b, count;
     int32_t u, v;
     uint8_t *pixels;
 
@@ -178,7 +187,9 @@ void ColorLUT::map(const Frame8 &frame, const RectA &region)
     {
         for (x=0; x<region.m_width && count<m_hpixelSize; x+=2, count++)
         {
-            r = pixels[x];
+            //mm red, green and blue are stored in the linear PIXELS array.
+			//mm they are arranged in a bayer pattern, which is why there are two green pixels for each red and blue one.
+			r = pixels[x];
             g1 = pixels[x - 1];
             g2 = pixels[-frame.m_width + x];
             b = pixels[-frame.m_width + x - 1];
@@ -287,6 +298,7 @@ void ColorLUT::add(const ColorModel *model, uint8_t modelIndex)
         if (((m_lut[i]&0x07)==0 || (m_lut[i]&0x07)>=modelIndex) &&
                 checkBounds(model, &p))
             m_lut[i] = modelIndex;
+			//mm m_lut is an array with CL_LUT_SIZE entries. I think it is a matrix in u-v-space where the value at each point indicates to which model that point in u-v-space belongs...
     }
 }
 
@@ -353,12 +365,14 @@ int ColorLUT::growRegion(RectA *result, const Frame8 &frame, const Point16 &seed
     if (region.m_yOffset+region.m_height>frame.m_height)
         region.m_height = frame.m_height-region.m_yOffset;
 
-    map(frame, region);
-    mean(&mean0);
+	//mm find u and v (hue?) values for the region
+    map(frame, region); //map gets the u and v values for the region, given FRAME. it then saves the result in the m_hpixels, which is accessed by mean.
+    mean(&mean0); //mm mean is defined above: it calculates the mean position of a region (?) on the u-v hue matrix and saves it in the input argument, which is a Fpoint (point in 2D, floating precision).
     done = 0x00;
 
     while (1)
     {
+		//mm iterate over all 4 directions for growing algorithm:
         for (dir=0; dir<4; dir++)
         {
             if (done&(1<<dir))
@@ -421,7 +435,8 @@ int ColorLUT::growRegion(RectA *result, const Frame8 &frame, const Point16 &seed
             mean(&newMean);
 
             // test new region
-            dist = distance(mean0, newMean);
+            dist = distance(mean0, newMean); //mm this distance is in color space, not pixel space!!!! if the distance is too large, then the region stops growing!! this is at least one of the moments when image data is compared to clut data, and it happens in distance!! THINK THIS TRHOUGH!
+				//It doesn't happen directly in distance: Distance simply calculates the Euclidean norm between the input points. 
 
             if (dist>GROW_MAX_DISTANCE || m_hpixelLen==0)
                 done |= 1<<dir;

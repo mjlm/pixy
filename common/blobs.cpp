@@ -80,6 +80,9 @@ Blobs::~Blobs()
 
 void Blobs::blobify()
 {
+	//mm not entirely sure yet, but I think this function might just "draw" the blobs, based on the color model of each pixel. the color model is already determined in the "packed" data (see unpack...color model information is extracted from the packed data there...)
+	
+	
     uint32_t i, j, k;
     CBlob *blob;
     uint16_t *blobsStart;
@@ -87,14 +90,18 @@ void Blobs::blobify()
     uint16_t left, top, right, bottom;
     //uint32_t timer, timer2=0;
 
-    unpack();
+    unpack(); //mm as is clear in unpack(), at this point, we already know the model to which each blob belongs.
 
-    // copy blobs into memory
+    // copy blobs into memory //mm does this refer to the unpack() above??
     invalid = 0;
+	
     // mutex keeps interrupt routine from stepping on us
     m_mutex = true;
+	
+	//mm iterate through models:
     for (i=0, m_numBlobs=0; i<NUM_MODELS; i++)
     {
+		//mm iterate through blobs in this model:
         for (j=m_numBlobs*5, k=0, blobsStart=m_blobs+j, numBlobsStart=m_numBlobs, blob=m_assembler[i].finishedBlobs;
              blob && m_numBlobs<m_maxBlobs && k<m_maxBlobsPerModel; blob=blob->next, k++)
         {
@@ -563,6 +570,7 @@ void Blobs::processCoded()
     }
 }
 
+//mm this function is the same as below but for the case when no seed is used, but a region directly (e.g. by selection in pixymon?)
 int Blobs::generateLUT(uint8_t model, const Frame8 &frame, const RectA &region, ColorModel *pcmodel)
 {
     int goodness;
@@ -587,13 +595,16 @@ int Blobs::generateLUT(uint8_t model, const Frame8 &frame, const Point16 &seed, 
     int goodness;
     RectA cregion;
     ColorModel cmodel;
-
+	
+	//mm growRegion takes a seed point, and then grows a region around it that has similar color values (below GROW_MAX_DISTANCE in u-v-space). this happens independently of any clut, just based on the color values in the image frame.
     m_clut->growRegion(&cregion, frame, seed);
 
+	//mm now, based on the grown region, the pixels of which are similar in color, we generate a color model:
     goodness = m_clut->generate(&cmodel, frame, cregion);
     if (goodness==0)
         return -1; // this model sucks!
 
+	//mm the input argument MODEL is just the index of the model we're currently working on, i.e. an int with one of 7 values. so clear(model) deletes model number MODEL, and add(&cmodel, model) then adds the newly generated colormodel in the model slot number MODEL.
     m_clut->clear(model);
     m_clut->add(&cmodel, model);
 

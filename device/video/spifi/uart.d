@@ -1,0 +1,15 @@
+.\spifi\uart.o: ..\libpixy\uart.cpp
+.\spifi\uart.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\inttypes.h
+.\spifi\uart.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\spifi\uart.o: ..\libpixy\lpc43xx_scu.h
+.\spifi\uart.o: ..\libpixy\pixyvals.h
+.\spifi\uart.o: ..\libpixy\uart.h
+.\spifi\uart.o: ..\libpixy\iserial.h
+.\spifi\uart.o: ..\libpixy\lpc43xx_uart.h
+.\spifi\uart.o: ..\libpixy\lpc43xx.h
+.\spifi\uart.o: ..\libpixy\core_cm4.h
+.\spifi\uart.o: ..\libpixy\core_cmInstr.h
+.\spifi\uart.o: ..\libpixy\core_cmFunc.h
+.\spifi\uart.o: C:\Users\Matthias\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm4_simd.h
+.\spifi\uart.o: ..\libpixy\system_LPC43xx.h
+.\spifi\uart.o: ..\libpixy\lpc_types.h
