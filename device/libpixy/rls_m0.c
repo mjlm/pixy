@@ -231,8 +231,9 @@ loop5A
 
 		LDRB 	r4, [r0] // green 	 
 		// cycle 
-		SUBS	r3, r4   // blue-green
-		ASRS    r3, #1
+		//SUBS	r3, r4   // blue-green
+		ADDS	r3, r4   //MJLM: ADD blue and green, rather than subtracting them, to retain luminance info.
+		ASRS    r3, #1   // reduce 9 to 8 bits arithmetically
 		STRB    r3,	[r1] // store blue-green
 		// cycle 
 		ADDS    r1, #0x01
@@ -320,7 +321,8 @@ $lx		LDRB 	r5, [r0, r4] // load green pixel
 $lx		LEXT	$rx
 $lx		RED
 		// cycle
-		SUBS	r6, r5   // red-green
+		// SUBS	r6, r5   // red-green
+		ADDS	r6, r5   //MJLM: ADD red and green, rather than subtracting them, to retain luminance info.
 		ASRS	r6, #1	 // reduce 9 to 8 bits arithmetically
 		LSLS	r6, #24  // shift red-green and get rid of higher-order bits
 		LSRS	r6, #16  // shift red-green back, make it the higher 8 bits of the index
