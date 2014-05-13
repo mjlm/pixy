@@ -116,15 +116,17 @@ int cc_loadLut(void)
 	// clear lut
 	g_blobs->m_clut->clear();
 
-	for (i=1; i<=NUM_MODELS; i++)
-	{
-		sprintf(id, "signature%d", i);
-		// get signature and add to color lut
-		res = prm_get(id, &len, &pmodel, END);
-		if (res<0)
-			return res;
-		g_blobs->m_clut->add(pmodel, i);
-	}
+//mm Don't do this checking, but just load pmodel 1, which is the hard-coded luminance model
+//	for (i=1; i<=NUM_MODELS; i++)
+//	{
+//		sprintf(id, "signature%d", i);
+//		// get signature and add to color lut
+//		res = prm_get(id, &len, &pmodel, END);
+//		if (res<0)
+//			return res;
+//		g_blobs->m_clut->add(pmodel, i);
+//	}
+	g_blobs->m_clut->add(pmodel, 1);
 
 	// go ahead and flush since we've changed things
 	g_qqueue->flush();

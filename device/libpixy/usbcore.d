@@ -1,0 +1,15 @@
+.\usbcore.o: usbcore.c
+.\usbcore.o: lpc43xx.H
+.\usbcore.o: .\core_cm4.h
+.\usbcore.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\usbcore.o: .\core_cmInstr.h
+.\usbcore.o: .\core_cmFunc.h
+.\usbcore.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm4_simd.h
+.\usbcore.o: system_LPC43xx.h
+.\usbcore.o: lpc_types.h
+.\usbcore.o: usb.h
+.\usbcore.o: usbcfg.h
+.\usbcore.o: usbhw.h
+.\usbcore.o: usbcore.h
+.\usbcore.o: usbdesc.h
+.\usbcore.o: usbuser.h

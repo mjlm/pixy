@@ -1,0 +1,12 @@
+.\debug.o: debug.c
+.\debug.o: debug.h
+.\debug.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+.\debug.o: debug_frmwrk.h
+.\debug.o: lpc43xx_uart.h
+.\debug.o: lpc43xx.h
+.\debug.o: .\core_cm0.h
+.\debug.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\debug.o: .\core_cmInstr.h
+.\debug.o: .\core_cmFunc.h
+.\debug.o: system_LPC43xx.h
+.\debug.o: lpc_types.h

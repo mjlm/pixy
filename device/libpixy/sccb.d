@@ -1,0 +1,9 @@
+.\sccb.o: sccb.cpp
+.\sccb.o: sccb.h
+.\sccb.o: lpc43xx.h
+.\sccb.o: .\core_cm4.h
+.\sccb.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\sccb.o: .\core_cmInstr.h
+.\sccb.o: .\core_cmFunc.h
+.\sccb.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm4_simd.h
+.\sccb.o: system_LPC43xx.h

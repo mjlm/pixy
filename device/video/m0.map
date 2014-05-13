@@ -1,0 +1,664 @@
+Product: MDK-ARM Professional 5.10
+Component: ARM Compiler 5.04 update 1 (build 49)
+Tool: armlink [5040049]
+
+==============================================================================
+
+Section Cross References
+
+    main_m0.o(i.main) refers to chirp.o(i.chirpOpen) for chirpOpen
+    main_m0.o(i.main) refers to exec_m0.o(i.exec_init) for exec_init
+    main_m0.o(i.main) refers to frame_m0.o(i.frame_init) for frame_init
+    main_m0.o(i.main) refers to rls_m0.o(i.rls_init) for rls_init
+    main_m0.o(i.main) refers to exec_m0.o(i.exec_loop) for exec_loop
+    startup_lpc43xx_m0.o(RESET) refers to startup_lpc43xx_m0.o(STACK) for __initial_sp
+    startup_lpc43xx_m0.o(RESET) refers to startup_lpc43xx_m0.o(.text) for M0_Reset_Handler
+    startup_lpc43xx_m0.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    qqueue.o(i.qq_enqueue) refers to qqueue.o(i.qq_free) for qq_free
+    qqueue.o(i.qq_enqueue) refers to qqueue.o(.data) for g_qqueue
+    qqueue.o(i.qq_free) refers to qqueue.o(.data) for g_qqueue
+    exec_m0.o(i.exec_init) refers to chirp.o(i.chirpSetProc) for chirpSetProc
+    exec_m0.o(i.exec_init) refers to exec_m0.o(i.exec_run) for exec_run
+    exec_m0.o(i.exec_init) refers to exec_m0.o(i.exec_stop) for exec_stop
+    exec_m0.o(i.exec_init) refers to exec_m0.o(i.exec_running) for exec_running
+    exec_m0.o(i.exec_loop) refers to chirp.o(i.chirpService) for chirpService
+    exec_m0.o(i.exec_loop) refers to exec_m0.o(i.setup0) for setup0
+    exec_m0.o(i.exec_loop) refers to exec_m0.o(i.loop0) for loop0
+    exec_m0.o(i.exec_loop) refers to exec_m0.o(.data) for g_run
+    exec_m0.o(i.exec_run) refers to exec_m0.o(.data) for g_program
+    exec_m0.o(i.exec_running) refers to exec_m0.o(.data) for g_running
+    exec_m0.o(i.exec_stop) refers to exec_m0.o(.data) for g_run
+    exec_m0.o(i.loop0) refers to rls_m0.o(i.getRLSFrame) for getRLSFrame
+    exec_m0.o(i.loop0) refers to exec_m0.o(.data) for g_lut
+    frame_m0.o(.emb_text) refers to frame_m0.o(i.callSyncM0) for callSyncM0
+    frame_m0.o(.emb_text) refers to frame_m0.o(i.callSyncM1) for callSyncM1
+    frame_m0.o(i.callSyncM0) refers to frame_m0.o(.emb_text) for syncM0
+    frame_m0.o(i.callSyncM1) refers to frame_m0.o(.emb_text) for syncM1
+    frame_m0.o(i.frame_init) refers to chirp.o(i.chirpSetProc) for chirpSetProc
+    frame_m0.o(i.frame_init) refers to frame_m0.o(i.getFrame) for getFrame
+    frame_m0.o(i.getFrame) refers to frame_m0.o(i.grabM0R0) for grabM0R0
+    frame_m0.o(i.getFrame) refers to frame_m0.o(i.grabM1R1) for grabM1R1
+    frame_m0.o(i.getFrame) refers to frame_m0.o(i.grabM1R2) for grabM1R2
+    frame_m0.o(i.grabM0R0) refers to frame_m0.o(i.skipLines) for skipLines
+    frame_m0.o(i.grabM0R0) refers to frame_m0.o(.emb_text) for lineM0
+    frame_m0.o(i.grabM1R1) refers to frame_m0.o(i.skipLines) for skipLines
+    frame_m0.o(i.grabM1R1) refers to frame_m0.o(.emb_text) for lineM1R1
+    frame_m0.o(i.grabM1R2) refers to frame_m0.o(i.skipLines) for skipLines
+    frame_m0.o(i.grabM1R2) refers to frame_m0.o(.emb_text) for lineM1R2Merge
+    frame_m0.o(i.skipLines) refers to frame_m0.o(i.skipLine) for skipLine
+    rls_m0.o(.emb_text) refers to frame_m0.o(i.callSyncM1) for callSyncM1
+    rls_m0.o(i.createLogLut) refers to rls_m0.o(i.intLog) for intLog
+    rls_m0.o(i.createLogLut) refers to rls_m0.o(.data) for g_logLut
+    rls_m0.o(i.getRLSFrame) refers to rls_m0.o(i.createLogLut) for createLogLut
+    rls_m0.o(i.getRLSFrame) refers to qqueue.o(i.qq_free) for qq_free
+    rls_m0.o(i.getRLSFrame) refers to qqueue.o(i.qq_enqueue) for qq_enqueue
+    rls_m0.o(i.getRLSFrame) refers to frame_m0.o(i.skipLines) for skipLines
+    rls_m0.o(i.getRLSFrame) refers to rls_m0.o(.emb_text) for lineProcessedRL0A
+    rls_m0.o(i.getRLSFrame) refers to rls_m0.o(.data) for g_logLut
+    rls_m0.o(i.getRLSFrame) refers to qqueue.o(.data) for g_qqueue
+    rls_m0.o(i.rls_init) refers to chirp.o(i.chirpSetProc) for chirpSetProc
+    rls_m0.o(i.rls_init) refers to rls_m0.o(i.getRLSFrame) for getRLSFrame
+    chirp.o(i.assembleHelper) refers to d2f.o(.text) for __aeabi_d2f
+    chirp.o(i.assembleHelper) refers to strlen.o(.text) for strlen
+    chirp.o(i.assembleHelper) refers to chirp.o(i.reallocate) for reallocate
+    chirp.o(i.assembleHelper) refers to memcpya.o(.text) for __aeabi_memcpy
+    chirp.o(i.assembleHelper) refers to chirp.o(.data) for g_len
+    chirp.o(i.chirpAssemble) refers to chirp.o(i.assembleHelper) for assembleHelper
+    chirp.o(i.chirpCall) refers to chirp.o(i.assembleHelper) for assembleHelper
+    chirp.o(i.chirpCall) refers to chirp.o(i.sendChirpRetry) for sendChirpRetry
+    chirp.o(i.chirpCall) refers to chirp.o(i.recvChirp) for recvChirp
+    chirp.o(i.chirpCall) refers to chirp.o(i.handleChirp) for handleChirp
+    chirp.o(i.chirpCall) refers to chirp.o(i.loadArgs) for loadArgs
+    chirp.o(i.chirpCall) refers to chirp.o(.data) for g_connected
+    chirp.o(i.chirpClose) refers to malloc.o(i.free) for free
+    chirp.o(i.chirpClose) refers to chirp.o(.data) for g_procTable
+    chirp.o(i.chirpGetProc) refers to chirp.o(i.updateTable) for updateTable
+    chirp.o(i.chirpGetProc) refers to chirp.o(i.chirpCall) for chirpCall
+    chirp.o(i.chirpOpen) refers to smlink.o(i.linkGetFlags) for linkGetFlags
+    chirp.o(i.chirpOpen) refers to chirp.o(i.linkBlockSize) for linkBlockSize
+    chirp.o(i.chirpOpen) refers to malloc.o(i.malloc) for malloc
+    chirp.o(i.chirpOpen) refers to memseta.o(.text) for __aeabi_memclr4
+    chirp.o(i.chirpOpen) refers to chirp.o(.data) for g_connected
+    chirp.o(i.chirpRemoteInit) refers to chirp.o(i.chirpCall) for chirpCall
+    chirp.o(i.chirpRemoteInit) refers to chirp.o(.data) for g_remoteInit
+    chirp.o(i.chirpService) refers to chirp.o(i.handleChirp) for handleChirp
+    chirp.o(i.chirpService) refers to chirp.o(i.recvChirp) for recvChirp
+    chirp.o(i.chirpSetProc) refers to chirp.o(i.updateTable) for updateTable
+    chirp.o(i.handleChirp) refers to chirp.o(i.handleEnumerate) for handleEnumerate
+    chirp.o(i.handleChirp) refers to chirp.o(i.handleInit) for handleInit
+    chirp.o(i.handleChirp) refers to chirp.o(i.sendChirpRetry) for sendChirpRetry
+    chirp.o(i.handleChirp) refers to chirp.o(.data) for g_len
+    chirp.o(i.handleEnumerate) refers to chirp.o(i.lookupTable) for lookupTable
+    chirp.o(i.handleEnumerate) refers to chirp.o(.data) for g_procTable
+    chirp.o(i.handleInit) refers to chirp.o(i.chirpInit) for chirpInit
+    chirp.o(i.handleInit) refers to chirp.o(i.chirpAssemble) for chirpAssemble
+    chirp.o(i.handleInit) refers to chirp.o(.data) for g_remoteInit
+    chirp.o(i.loadArgs) refers to chirp.o(i.chirpGetType) for chirpGetType
+    chirp.o(i.lookupTable) refers to strcmp.o(.text) for strcmp
+    chirp.o(i.lookupTable) refers to chirp.o(.data) for g_procTable
+    chirp.o(i.reallocTable) refers to malloc.o(i.malloc) for malloc
+    chirp.o(i.reallocTable) refers to memseta.o(.text) for __aeabi_memclr4
+    chirp.o(i.reallocTable) refers to memcpya.o(.text) for __aeabi_memcpy4
+    chirp.o(i.reallocTable) refers to malloc.o(i.free) for free
+    chirp.o(i.reallocTable) refers to chirp.o(.data) for g_procTableSize
+    chirp.o(i.recvChirp) refers to chirp.o(i.recvFull) for recvFull
+    chirp.o(i.recvChirp) refers to strlen.o(.text) for strlen
+    chirp.o(i.recvChirp) refers to chirp.o(.data) for g_buf
+    chirp.o(i.recvFull) refers to smlink.o(i.linkReceive) for linkReceive
+    chirp.o(i.recvFull) refers to chirp.o(.data) for g_buf
+    chirp.o(i.sendChirp) refers to chirp.o(i.sendFull) for sendFull
+    chirp.o(i.sendChirpRetry) refers to chirp.o(i.sendChirp) for sendChirp
+    chirp.o(i.sendChirpRetry) refers to chirp.o(.data) for g_connected
+    chirp.o(i.sendFull) refers to smlink.o(i.linkSend) for linkSend
+    chirp.o(i.sendFull) refers to chirp.o(.data) for g_buf
+    chirp.o(i.updateTable) refers to chirp.o(i.lookupTable) for lookupTable
+    chirp.o(i.updateTable) refers to chirp.o(i.reallocTable) for reallocTable
+    chirp.o(i.updateTable) refers to chirp.o(.data) for g_procTableSize
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    malloc.o(i.free) refers to mvars.o(.data) for __microlib_freelist
+    malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist
+    malloc.o(i.malloc) refers to startup_lpc43xx_m0.o(HEAP) for __heap_base
+    mallocr.o(i.__free$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.__malloc$realloc) refers to mallocr.o(i.internal_alloc) for internal_alloc
+    mallocr.o(i.__malloc$realloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    mallocr.o(i.__malloc$realloc) refers to startup_lpc43xx_m0.o(HEAP) for __heap_base
+    mallocr.o(i.__malloc$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.internal_alloc) refers to memcpya.o(.text) for __aeabi_memcpy
+    mallocr.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.realloc) refers to mallocr.o(i.__free$realloc) for __free$realloc
+    mallocr.o(i.realloc) refers to mallocr.o(i.internal_alloc) for internal_alloc
+    mallocr.o(i.realloc) refers to mallocr.o(i.__malloc$realloc) for __malloc$realloc
+    mallocr.o(i.realloc) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__aligned_malloc) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__aligned_malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    malloca.o(i.__aligned_malloc) refers to startup_lpc43xx_m0.o(HEAP) for __heap_base
+    malloca.o(i.__free$memalign) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__malloc$memalign) refers to malloca.o(i.__aligned_malloc) for __aligned_malloc
+    mallocra.o(i.__aligned_malloc$realloc) refers to mallocra.o(i.internal_alloc) for internal_alloc
+    mallocra.o(i.__aligned_malloc$realloc) refers to startup_lpc43xx_m0.o(HEAP) for __heap_base
+    mallocra.o(i.__aligned_malloc$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.__aligned_malloc$realloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    mallocra.o(i.__free$realloc$memalign) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.__malloc$realloc$memalign) refers to mallocra.o(i.__aligned_malloc$realloc) for __aligned_malloc$realloc
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.__free$realloc$memalign) for __free$realloc$memalign
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.internal_alloc) for internal_alloc
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.__malloc$realloc$memalign) for __malloc$realloc$memalign
+    mallocra.o(i.__realloc$memalign) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.internal_alloc) refers to memcpya.o(.text) for __aeabi_memcpy
+    mallocra.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
+    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_lpc43xx_m0.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_lpc43xx_m0.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main_m0.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main_m0.o(i.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main_m0.o(.emb_text), (8 bytes).
+    Removing frame_m0.o(i.vsync), (112 bytes).
+    Removing chirp.o(i.calcCrc), (28 bytes).
+    Removing chirp.o(i.chirpCall), (212 bytes).
+    Removing chirp.o(i.chirpClose), (20 bytes).
+    Removing chirp.o(i.chirpGetProc), (72 bytes).
+    Removing chirp.o(i.chirpGetType), (10 bytes).
+    Removing chirp.o(i.chirpRemoteInit), (96 bytes).
+    Removing chirp.o(i.copyAlign), (20 bytes).
+    Removing chirp.o(i.linkGetFlags), (6 bytes).
+    Removing chirp.o(i.loadArgs), (178 bytes).
+    Removing smlink.o(.emb_text), (8 bytes).
+
+12 unused section(s) (total 770 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      184  startup_lpc43xx_m0.o(RESET)
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
+    ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    ../clib/microlib/string/strcmp.c         0x00000000   Number         0  strcmp.o ABSOLUTE
+    ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ..\\libpixy\\frame_m0.c                  0x00000000   Number         0  frame_m0.o ABSOLUTE
+    ..\\libpixy\\rls_m0.c                    0x00000000   Number         0  rls_m0.o ABSOLUTE
+    ..\libpixy\exec_m0.c                     0x00000000   Number         0  exec_m0.o ABSOLUTE
+    ..\libpixy\frame_m0.c                    0x00000000   Number         0  frame_m0.o ABSOLUTE
+    ..\libpixy\qqueue.c                      0x00000000   Number         0  qqueue.o ABSOLUTE
+    ..\libpixy\rls_m0.c                      0x00000000   Number         0  rls_m0.o ABSOLUTE
+    chirp.c                                  0x00000000   Number         0  chirp.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    main_m0.c                                0x00000000   Number         0  main_m0.o ABSOLUTE
+    main_m0.c                                0x00000000   Number         0  main_m0.o ABSOLUTE
+    smlink.c                                 0x00000000   Number         0  smlink.o ABSOLUTE
+    smlink.c                                 0x00000000   Number         0  smlink.o ABSOLUTE
+    startup_LPC43xx_m0.s                     0x00000000   Number         0  startup_lpc43xx_m0.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000b8   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000b8   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000bc   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000c0   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000000c0   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000000c0   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x000000c8   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000000c8   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000000c8   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000c8   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .emb_text                                0x000000cc   Section      634  frame_m0.o(.emb_text)
+    .emb_text                                0x00000348   Section      434  rls_m0.o(.emb_text)
+    .text                                    0x000004fc   Section       28  startup_lpc43xx_m0.o(.text)
+    .text                                    0x00000518   Section        0  memcpya.o(.text)
+    .text                                    0x0000053c   Section        0  memseta.o(.text)
+    .text                                    0x00000560   Section        0  strlen.o(.text)
+    .text                                    0x0000056e   Section        0  strcmp.o(.text)
+    .text                                    0x0000058a   Section        0  d2f.o(.text)
+    .text                                    0x000005c2   Section        0  fepilogue.o(.text)
+    .text                                    0x000005c2   Section        0  iusefp.o(.text)
+    .text                                    0x00000644   Section       36  init.o(.text)
+    i.__scatterload_copy                     0x00000668   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00000676   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00000678   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.assembleHelper                         0x00000688   Section        0  chirp.o(i.assembleHelper)
+    assembleHelper                           0x00000689   Thumb Code   558  chirp.o(i.assembleHelper)
+    i.callSyncM0                             0x000008c8   Section        0  frame_m0.o(i.callSyncM0)
+    i.callSyncM1                             0x000008dc   Section        0  frame_m0.o(i.callSyncM1)
+    i.chirpAssemble                          0x000008f0   Section        0  chirp.o(i.chirpAssemble)
+    i.chirpInit                              0x0000090e   Section        0  chirp.o(i.chirpInit)
+    i.chirpOpen                              0x00000914   Section        0  chirp.o(i.chirpOpen)
+    i.chirpService                           0x0000098c   Section        0  chirp.o(i.chirpService)
+    i.chirpSetProc                           0x000009bc   Section        0  chirp.o(i.chirpSetProc)
+    i.createLogLut                           0x000009d8   Section        0  rls_m0.o(i.createLogLut)
+    i.exec_init                              0x000009fc   Section        0  exec_m0.o(i.exec_init)
+    i.exec_loop                              0x00000a3c   Section        0  exec_m0.o(i.exec_loop)
+    i.exec_run                               0x00000a70   Section        0  exec_m0.o(i.exec_run)
+    i.exec_running                           0x00000a94   Section        0  exec_m0.o(i.exec_running)
+    i.exec_stop                              0x00000aa0   Section        0  exec_m0.o(i.exec_stop)
+    i.frame_init                             0x00000aac   Section        0  frame_m0.o(i.frame_init)
+    i.free                                   0x00000acc   Section        0  malloc.o(i.free)
+    i.getFrame                               0x00000b20   Section        0  frame_m0.o(i.getFrame)
+    i.getRLSFrame                            0x00000b90   Section        0  rls_m0.o(i.getRLSFrame)
+    i.grabM0R0                               0x00000c88   Section        0  frame_m0.o(i.grabM0R0)
+    i.grabM1R1                               0x00000cc8   Section        0  frame_m0.o(i.grabM1R1)
+    i.grabM1R2                               0x00000d08   Section        0  frame_m0.o(i.grabM1R2)
+    i.handleChirp                            0x00000da8   Section        0  chirp.o(i.handleChirp)
+    handleChirp                              0x00000da9   Thumb Code   436  chirp.o(i.handleChirp)
+    i.handleEnumerate                        0x00000f6c   Section        0  chirp.o(i.handleEnumerate)
+    handleEnumerate                          0x00000f6d   Thumb Code    32  chirp.o(i.handleEnumerate)
+    i.handleInit                             0x00000f90   Section        0  chirp.o(i.handleInit)
+    handleInit                               0x00000f91   Thumb Code    60  chirp.o(i.handleInit)
+    i.intLog                                 0x00000fdc   Section        0  rls_m0.o(i.intLog)
+    i.linkBlockSize                          0x00000fe2   Section        0  chirp.o(i.linkBlockSize)
+    i.linkGetFlags                           0x00000fe8   Section        0  smlink.o(i.linkGetFlags)
+    i.linkReceive                            0x00001008   Section        0  smlink.o(i.linkReceive)
+    i.linkSend                               0x00001048   Section        0  smlink.o(i.linkSend)
+    i.lookupTable                            0x00001088   Section        0  chirp.o(i.lookupTable)
+    lookupTable                              0x00001089   Thumb Code    64  chirp.o(i.lookupTable)
+    i.loop0                                  0x000010d0   Section        0  exec_m0.o(i.loop0)
+    i.main                                   0x000010e4   Section        0  main_m0.o(i.main)
+    i.malloc                                 0x00001100   Section        0  malloc.o(i.malloc)
+    i.qq_enqueue                             0x0000116c   Section        0  qqueue.o(i.qq_enqueue)
+    i.qq_free                                0x000011c8   Section        0  qqueue.o(i.qq_free)
+    i.reallocTable                           0x000011e8   Section        0  chirp.o(i.reallocTable)
+    reallocTable                             0x000011e9   Thumb Code    74  chirp.o(i.reallocTable)
+    i.reallocate                             0x0000123c   Section        0  chirp.o(i.reallocate)
+    reallocate                               0x0000123d   Thumb Code     8  chirp.o(i.reallocate)
+    i.recvChirp                              0x00001244   Section        0  chirp.o(i.recvChirp)
+    recvChirp                                0x00001245   Thumb Code   290  chirp.o(i.recvChirp)
+    i.recvFull                               0x00001370   Section        0  chirp.o(i.recvFull)
+    recvFull                                 0x00001371   Thumb Code   100  chirp.o(i.recvFull)
+    i.rls_init                               0x000013e0   Section        0  rls_m0.o(i.rls_init)
+    i.sendChirp                              0x00001400   Section        0  chirp.o(i.sendChirp)
+    sendChirp                                0x00001401   Thumb Code    28  chirp.o(i.sendChirp)
+    i.sendChirpRetry                         0x0000141c   Section        0  chirp.o(i.sendChirpRetry)
+    sendChirpRetry                           0x0000141d   Thumb Code    48  chirp.o(i.sendChirpRetry)
+    i.sendFull                               0x00001450   Section        0  chirp.o(i.sendFull)
+    sendFull                                 0x00001451   Thumb Code    62  chirp.o(i.sendFull)
+    i.setup0                                 0x0000149c   Section        0  exec_m0.o(i.setup0)
+    i.skipLine                               0x000014a0   Section        0  frame_m0.o(i.skipLine)
+    i.skipLines                              0x000014d4   Section        0  frame_m0.o(i.skipLines)
+    i.updateTable                            0x00001518   Section        0  chirp.o(i.updateTable)
+    updateTable                              0x00001519   Thumb Code   104  chirp.o(i.updateTable)
+    .data                                    0x00002000   Section        4  qqueue.o(.data)
+    .data                                    0x00002004   Section       12  exec_m0.o(.data)
+    .data                                    0x00002010   Section        4  rls_m0.o(.data)
+    .data                                    0x00002014   Section       32  chirp.o(.data)
+    g_procTable                              0x00002014   Data           4  chirp.o(.data)
+    g_procTableSize                          0x00002018   Data           2  chirp.o(.data)
+    g_blkSize                                0x0000201a   Data           2  chirp.o(.data)
+    g_connected                              0x0000201c   Data           4  chirp.o(.data)
+    g_buf                                    0x00002020   Data           4  chirp.o(.data)
+    g_len                                    0x00002024   Data           4  chirp.o(.data)
+    g_bufSize                                0x00002028   Data           4  chirp.o(.data)
+    g_remoteInit                             0x0000202c   Data           4  chirp.o(.data)
+    g_hinformer                              0x00002030   Data           4  chirp.o(.data)
+    .data                                    0x00002034   Section        4  mvars.o(.data)
+    .data                                    0x00002038   Section        4  mvars.o(.data)
+    HEAP                                     0x00002040   Section     1024  startup_lpc43xx_m0.o(HEAP)
+    STACK                                    0x00002440   Section     1024  startup_lpc43xx_m0.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main_m0.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_lpc43xx_m0.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __main                                   0x000000b9   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000b9   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000bd   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000c1   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000c1   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000000c1   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000000c1   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000000c9   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000000c9   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    __asm___10_frame_m0_c_vsync____REV16     0x000000cd   Thumb Code     4  frame_m0.o(.emb_text)
+    __asm___10_frame_m0_c_vsync____REVSH     0x000000d1   Thumb Code     4  frame_m0.o(.emb_text)
+    syncM0                                   0x000000d5   Thumb Code    42  frame_m0.o(.emb_text)
+    syncM1                                   0x000000ff   Thumb Code    84  frame_m0.o(.emb_text)
+    lineM0                                   0x00000153   Thumb Code    90  frame_m0.o(.emb_text)
+    lineM1R1                                 0x000001ad   Thumb Code    94  frame_m0.o(.emb_text)
+    lineM1R2                                 0x0000020b   Thumb Code   160  frame_m0.o(.emb_text)
+    lineM1R2Merge                            0x000002ab   Thumb Code   156  frame_m0.o(.emb_text)
+    __asm___8_rls_m0_c_g_logLut____REV16     0x00000349   Thumb Code     4  rls_m0.o(.emb_text)
+    __asm___8_rls_m0_c_g_logLut____REVSH     0x0000034d   Thumb Code     4  rls_m0.o(.emb_text)
+    lineProcessedRL0A                        0x00000351   Thumb Code    74  rls_m0.o(.emb_text)
+    lineProcessedRL1A                        0x0000039b   Thumb Code   352  rls_m0.o(.emb_text)
+    M0_Reset_Handler                         0x000004fd   Thumb Code     4  startup_lpc43xx_m0.o(.text)
+    M0_NMI_Handler                           0x00000501   Thumb Code     2  startup_lpc43xx_m0.o(.text)
+    M0_HardFault_Handler                     0x00000503   Thumb Code     2  startup_lpc43xx_m0.o(.text)
+    M0_SVC_Handler                           0x00000505   Thumb Code     2  startup_lpc43xx_m0.o(.text)
+    M0_DebugMon_Handler                      0x00000507   Thumb Code     2  startup_lpc43xx_m0.o(.text)
+    M0_PendSV_Handler                        0x00000509   Thumb Code     2  startup_lpc43xx_m0.o(.text)
+    M0_SysTick_Handler                       0x0000050b   Thumb Code     2  startup_lpc43xx_m0.o(.text)
+    M0_ADC0_IRQHandler                       0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_ADC1_IRQHandler                       0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_C_CAN0_IRQHandler                     0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_DMA_IRQHandler                        0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_ETH_IRQHandler                        0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_EVENTROUTER_IRQHandler                0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_GINT1_IRQHandler                      0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_I2C0_OR_I2C1_IRQHandler               0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_I2S0_OR_I2S1_OR_QEI_IRQHandler        0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_LCD_IRQHandler                        0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_M4CORE_IRQHandler                     0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_MCPWM_IRQHandler                      0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_RIT_OR_WWDT_IRQHandler                0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_RTC_IRQHandler                        0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_SCT_IRQHandler                        0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_SDIO_IRQHandler                       0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_SGPIO_IRQHandler                      0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_SPI_OR_DAC_IRQHandler                 0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_SSP0_OR_SSP1_IRQHandler               0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_TIMER0_IRQHandler                     0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_TIMER3_IRQHandler                     0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_USART0_IRQHandler                     0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_USART2_OR_C_CAN1_IRQHandler           0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_USART3_IRQHandler                     0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_USB0_IRQHandler                       0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    M0_USB1_IRQHandler                       0x0000050d   Thumb Code     0  startup_lpc43xx_m0.o(.text)
+    getPC                                    0x00000515   Thumb Code     4  startup_lpc43xx_m0.o(.text)
+    __aeabi_memcpy                           0x00000519   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x00000519   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x00000519   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memset                           0x0000053d   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x0000053d   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x0000053d   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x0000054b   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x0000054b   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x0000054b   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x0000054f   Thumb Code    18  memseta.o(.text)
+    strlen                                   0x00000561   Thumb Code    14  strlen.o(.text)
+    strcmp                                   0x0000056f   Thumb Code    28  strcmp.o(.text)
+    __aeabi_d2f                              0x0000058b   Thumb Code    56  d2f.o(.text)
+    __I$use$fp                               0x000005c3   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x000005c3   Thumb Code    16  fepilogue.o(.text)
+    _float_epilogue                          0x000005d3   Thumb Code   114  fepilogue.o(.text)
+    __scatterload                            0x00000645   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00000645   Thumb Code     0  init.o(.text)
+    __scatterload_copy                       0x00000669   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00000677   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00000679   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    callSyncM0                               0x000008c9   Thumb Code    14  frame_m0.o(i.callSyncM0)
+    callSyncM1                               0x000008dd   Thumb Code    14  frame_m0.o(i.callSyncM1)
+    chirpAssemble                            0x000008f1   Thumb Code    30  chirp.o(i.chirpAssemble)
+    chirpInit                                0x0000090f   Thumb Code     4  chirp.o(i.chirpInit)
+    chirpOpen                                0x00000915   Thumb Code    88  chirp.o(i.chirpOpen)
+    chirpService                             0x0000098d   Thumb Code    48  chirp.o(i.chirpService)
+    chirpSetProc                             0x000009bd   Thumb Code    28  chirp.o(i.chirpSetProc)
+    createLogLut                             0x000009d9   Thumb Code    32  rls_m0.o(i.createLogLut)
+    exec_init                                0x000009fd   Thumb Code    30  exec_m0.o(i.exec_init)
+    exec_loop                                0x00000a3d   Thumb Code    44  exec_m0.o(i.exec_loop)
+    exec_run                                 0x00000a71   Thumb Code    24  exec_m0.o(i.exec_run)
+    exec_running                             0x00000a95   Thumb Code     6  exec_m0.o(i.exec_running)
+    exec_stop                                0x00000aa1   Thumb Code     8  exec_m0.o(i.exec_stop)
+    frame_init                               0x00000aad   Thumb Code    14  frame_m0.o(i.frame_init)
+    free                                     0x00000acd   Thumb Code    80  malloc.o(i.free)
+    getFrame                                 0x00000b21   Thumb Code   110  frame_m0.o(i.getFrame)
+    getRLSFrame                              0x00000b91   Thumb Code   232  rls_m0.o(i.getRLSFrame)
+    grabM0R0                                 0x00000c89   Thumb Code    60  frame_m0.o(i.grabM0R0)
+    grabM1R1                                 0x00000cc9   Thumb Code    60  frame_m0.o(i.grabM1R1)
+    grabM1R2                                 0x00000d09   Thumb Code   154  frame_m0.o(i.grabM1R2)
+    intLog                                   0x00000fdd   Thumb Code     6  rls_m0.o(i.intLog)
+    linkBlockSize                            0x00000fe3   Thumb Code     6  chirp.o(i.linkBlockSize)
+    linkGetFlags                             0x00000fe9   Thumb Code    22  smlink.o(i.linkGetFlags)
+    linkReceive                              0x00001009   Thumb Code    50  smlink.o(i.linkReceive)
+    linkSend                                 0x00001049   Thumb Code    50  smlink.o(i.linkSend)
+    loop0                                    0x000010d1   Thumb Code    12  exec_m0.o(i.loop0)
+    main                                     0x000010e5   Thumb Code    26  main_m0.o(i.main)
+    malloc                                   0x00001101   Thumb Code    92  malloc.o(i.malloc)
+    qq_enqueue                               0x0000116d   Thumb Code    84  qqueue.o(i.qq_enqueue)
+    qq_free                                  0x000011c9   Thumb Code    24  qqueue.o(i.qq_free)
+    rls_init                                 0x000013e1   Thumb Code    14  rls_m0.o(i.rls_init)
+    setup0                                   0x0000149d   Thumb Code     2  exec_m0.o(i.setup0)
+    skipLine                                 0x000014a1   Thumb Code    46  frame_m0.o(i.skipLine)
+    skipLines                                0x000014d5   Thumb Code    64  frame_m0.o(i.skipLines)
+    Region$$Table$$Base                      0x00001588   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000015a8   Number         0  anon$$obj.o(Region$$Table)
+    g_qqueue                                 0x00002000   Data           4  qqueue.o(.data)
+    g_running                                0x00002004   Data           1  exec_m0.o(.data)
+    g_run                                    0x00002005   Data           1  exec_m0.o(.data)
+    g_program                                0x00002006   Data           1  exec_m0.o(.data)
+    g_m0mem                                  0x00002008   Data           4  exec_m0.o(.data)
+    g_lut                                    0x0000200c   Data           4  exec_m0.o(.data)
+    g_logLut                                 0x00002010   Data           4  rls_m0.o(.data)
+    __microlib_freelist                      0x00002034   Data           4  mvars.o(.data)
+    __microlib_freelist_initialised          0x00002038   Data           4  mvars.o(.data)
+    __heap_base                              0x00002040   Data           0  startup_lpc43xx_m0.o(HEAP)
+    __heap_limit                             0x00002440   Data           0  startup_lpc43xx_m0.o(HEAP)
+    __initial_sp                             0x00002840   Data           0  startup_lpc43xx_m0.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000b9
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000015e4, Max: 0x00002000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x000015a8, Max: 0x00002000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x000000b8   Data   RO           88    RESET               startup_lpc43xx_m0.o
+    0x000000b8   0x00000000   Code   RO          512  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x000000b8   0x00000004   Code   RO          555    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x000000bc   0x00000004   Code   RO          558    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x000000c0   0x00000000   Code   RO          560    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x000000c0   0x00000000   Code   RO          562    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x000000c0   0x00000008   Code   RO          563    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x000000c8   0x00000000   Code   RO          565    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x000000c8   0x00000000   Code   RO          567    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x000000c8   0x00000004   Code   RO          556    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x000000cc   0x0000027a   Code   RO          174    .emb_text           frame_m0.o
+    0x00000346   0x00000002   PAD
+    0x00000348   0x000001b2   Code   RO          244    .emb_text           rls_m0.o
+    0x000004fa   0x00000002   PAD
+    0x000004fc   0x0000001c   Code   RO           89    .text               startup_lpc43xx_m0.o
+    0x00000518   0x00000024   Code   RO          515    .text               mc_p.l(memcpya.o)
+    0x0000053c   0x00000024   Code   RO          517    .text               mc_p.l(memseta.o)
+    0x00000560   0x0000000e   Code   RO          519    .text               mc_p.l(strlen.o)
+    0x0000056e   0x0000001c   Code   RO          521    .text               mc_p.l(strcmp.o)
+    0x0000058a   0x00000038   Code   RO          553    .text               mf_p.l(d2f.o)
+    0x000005c2   0x00000000   Code   RO          571    .text               mc_p.l(iusefp.o)
+    0x000005c2   0x00000082   Code   RO          572    .text               mf_p.l(fepilogue.o)
+    0x00000644   0x00000024   Code   RO          574    .text               mc_p.l(init.o)
+    0x00000668   0x0000000e   Code   RO          578    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x00000676   0x00000002   Code   RO          579    i.__scatterload_null  mc_p.l(handlers.o)
+    0x00000678   0x0000000e   Code   RO          580    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x00000686   0x00000002   PAD
+    0x00000688   0x00000240   Code   RO          288    i.assembleHelper    libpixy_m0.lib(chirp.o)
+    0x000008c8   0x00000014   Code   RO          175    i.callSyncM0        frame_m0.o
+    0x000008dc   0x00000014   Code   RO          176    i.callSyncM1        frame_m0.o
+    0x000008f0   0x0000001e   Code   RO          290    i.chirpAssemble     libpixy_m0.lib(chirp.o)
+    0x0000090e   0x00000004   Code   RO          295    i.chirpInit         libpixy_m0.lib(chirp.o)
+    0x00000912   0x00000002   PAD
+    0x00000914   0x00000078   Code   RO          296    i.chirpOpen         libpixy_m0.lib(chirp.o)
+    0x0000098c   0x00000030   Code   RO          298    i.chirpService      libpixy_m0.lib(chirp.o)
+    0x000009bc   0x0000001c   Code   RO          299    i.chirpSetProc      libpixy_m0.lib(chirp.o)
+    0x000009d8   0x00000024   Code   RO          245    i.createLogLut      rls_m0.o
+    0x000009fc   0x00000040   Code   RO          120    i.exec_init         exec_m0.o
+    0x00000a3c   0x00000034   Code   RO          121    i.exec_loop         exec_m0.o
+    0x00000a70   0x00000024   Code   RO          122    i.exec_run          exec_m0.o
+    0x00000a94   0x0000000c   Code   RO          123    i.exec_running      exec_m0.o
+    0x00000aa0   0x0000000c   Code   RO          124    i.exec_stop         exec_m0.o
+    0x00000aac   0x00000020   Code   RO          177    i.frame_init        frame_m0.o
+    0x00000acc   0x00000054   Code   RO          525    i.free              mc_p.l(malloc.o)
+    0x00000b20   0x0000006e   Code   RO          178    i.getFrame          frame_m0.o
+    0x00000b8e   0x00000002   PAD
+    0x00000b90   0x000000f8   Code   RO          246    i.getRLSFrame       rls_m0.o
+    0x00000c88   0x00000040   Code   RO          179    i.grabM0R0          frame_m0.o
+    0x00000cc8   0x00000040   Code   RO          180    i.grabM1R1          frame_m0.o
+    0x00000d08   0x000000a0   Code   RO          181    i.grabM1R2          frame_m0.o
+    0x00000da8   0x000001c4   Code   RO          301    i.handleChirp       libpixy_m0.lib(chirp.o)
+    0x00000f6c   0x00000024   Code   RO          302    i.handleEnumerate   libpixy_m0.lib(chirp.o)
+    0x00000f90   0x0000004c   Code   RO          303    i.handleInit        libpixy_m0.lib(chirp.o)
+    0x00000fdc   0x00000006   Code   RO          247    i.intLog            rls_m0.o
+    0x00000fe2   0x00000006   Code   RO          304    i.linkBlockSize     libpixy_m0.lib(chirp.o)
+    0x00000fe8   0x00000020   Code   RO          463    i.linkGetFlags      libpixy_m0.lib(smlink.o)
+    0x00001008   0x00000040   Code   RO          464    i.linkReceive       libpixy_m0.lib(smlink.o)
+    0x00001048   0x00000040   Code   RO          465    i.linkSend          libpixy_m0.lib(smlink.o)
+    0x00001088   0x00000048   Code   RO          307    i.lookupTable       libpixy_m0.lib(chirp.o)
+    0x000010d0   0x00000014   Code   RO          125    i.loop0             exec_m0.o
+    0x000010e4   0x0000001a   Code   RO            2    i.main              main_m0.o
+    0x000010fe   0x00000002   PAD
+    0x00001100   0x0000006c   Code   RO          526    i.malloc            mc_p.l(malloc.o)
+    0x0000116c   0x0000005c   Code   RO           93    i.qq_enqueue        qqueue.o
+    0x000011c8   0x00000020   Code   RO           94    i.qq_free           qqueue.o
+    0x000011e8   0x00000054   Code   RO          308    i.reallocTable      libpixy_m0.lib(chirp.o)
+    0x0000123c   0x00000008   Code   RO          309    i.reallocate        libpixy_m0.lib(chirp.o)
+    0x00001244   0x0000012c   Code   RO          310    i.recvChirp         libpixy_m0.lib(chirp.o)
+    0x00001370   0x00000070   Code   RO          311    i.recvFull          libpixy_m0.lib(chirp.o)
+    0x000013e0   0x00000020   Code   RO          248    i.rls_init          rls_m0.o
+    0x00001400   0x0000001c   Code   RO          312    i.sendChirp         libpixy_m0.lib(chirp.o)
+    0x0000141c   0x00000034   Code   RO          313    i.sendChirpRetry    libpixy_m0.lib(chirp.o)
+    0x00001450   0x0000004c   Code   RO          314    i.sendFull          libpixy_m0.lib(chirp.o)
+    0x0000149c   0x00000002   Code   RO          126    i.setup0            exec_m0.o
+    0x0000149e   0x00000002   PAD
+    0x000014a0   0x00000034   Code   RO          182    i.skipLine          frame_m0.o
+    0x000014d4   0x00000044   Code   RO          183    i.skipLines         frame_m0.o
+    0x00001518   0x00000070   Code   RO          315    i.updateTable       libpixy_m0.lib(chirp.o)
+    0x00001588   0x00000020   Data   RO          576    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x00002000, Size: 0x00000840, Max: 0x00002000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00002000   0x00000004   Data   RW           95    .data               qqueue.o
+    0x00002004   0x0000000c   Data   RW          127    .data               exec_m0.o
+    0x00002010   0x00000004   Data   RW          249    .data               rls_m0.o
+    0x00002014   0x00000020   Data   RW          316    .data               libpixy_m0.lib(chirp.o)
+    0x00002034   0x00000004   Data   RW          569    .data               mc_p.l(mvars.o)
+    0x00002038   0x00000004   Data   RW          570    .data               mc_p.l(mvars.o)
+    0x0000203c   0x00000004   PAD
+    0x00002040   0x00000400   Zero   RW           87    HEAP                startup_lpc43xx_m0.o
+    0x00002440   0x00000400   Zero   RW           86    STACK               startup_lpc43xx_m0.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       198         72          0         12          0       3785   exec_m0.o
+      1224         54          0          0          0       6550   frame_m0.o
+        26          0          0          0          0       4747   main_m0.o
+       124         16          0          4          0       2074   qqueue.o
+       756         38          0          4          0       4291   rls_m0.o
+        28          6        184          0       2048        708   startup_lpc43xx_m0.o
+
+    ----------------------------------------------------------------------
+      2366        186        216         20       2048      22155   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        10          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+      2220        152          0         32          0      17710   chirp.o
+       160         38          0          0          0       2228   smlink.o
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+       192         20          0          0          0        144   malloc.o
+        36          0          0          0          0         60   memcpya.o
+        36          0          0          0          0        100   memseta.o
+         0          0          0          8          0          0   mvars.o
+        28          0          0          0          0         68   strcmp.o
+        14          0          0          0          0         60   strlen.o
+        56          0          0          0          0         68   d2f.o
+       130          0          0          0          0        144   fepilogue.o
+
+    ----------------------------------------------------------------------
+      2962        226          0         40          4      20650   Library Totals
+         4          0          0          0          4          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+      2380        190          0         32          0      19938   libpixy_m0.lib
+       392         36          0          8          0        500   mc_p.l
+       186          0          0          0          0        212   mf_p.l
+
+    ----------------------------------------------------------------------
+      2962        226          0         40          4      20650   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      5328        412        216         60       2052      40829   Grand Totals
+      5328        412        216         60       2052      40829   ELF Image Totals
+      5328        412        216         60          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 5544 (   5.41kB)
+    Total RW  Size (RW Data + ZI Data)              2112 (   2.06kB)
+    Total ROM Size (Code + RO Data + RW Data)       5604 (   5.47kB)
+
+==============================================================================
+

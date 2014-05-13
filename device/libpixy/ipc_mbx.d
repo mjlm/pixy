@@ -1,0 +1,14 @@
+.\ipc_mbx.o: ipc_mbx.c
+.\ipc_mbx.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\ipc_mbx.o: lpc_types.h
+.\ipc_mbx.o: platform_config.h
+.\ipc_mbx.o: LPC43xx.h
+.\ipc_mbx.o: .\core_cm0.h
+.\ipc_mbx.o: .\core_cmInstr.h
+.\ipc_mbx.o: .\core_cmFunc.h
+.\ipc_mbx.o: system_LPC43xx.h
+.\ipc_mbx.o: ipc_mbx.h
+.\ipc_mbx.o: master_ipc_msg.h
+.\ipc_mbx.o: slave_ipc_msg.h
+.\ipc_mbx.o: master_mbx_callbacks.h
+.\ipc_mbx.o: slave_mbx_callbacks.h

@@ -1,0 +1,12 @@
+.\lpc43xx_ssp.o: lpc43xx_ssp.c
+.\lpc43xx_ssp.o: lpc43xx_ssp.h
+.\lpc43xx_ssp.o: lpc43xx.h
+.\lpc43xx_ssp.o: .\core_cm4.h
+.\lpc43xx_ssp.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\lpc43xx_ssp.o: .\core_cmInstr.h
+.\lpc43xx_ssp.o: .\core_cmFunc.h
+.\lpc43xx_ssp.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm4_simd.h
+.\lpc43xx_ssp.o: system_LPC43xx.h
+.\lpc43xx_ssp.o: lpc_types.h
+.\lpc43xx_ssp.o: lpc43xx_cgu.h
+.\lpc43xx_ssp.o: lpc43xx_libcfg_default.h

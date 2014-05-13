@@ -1,0 +1,11 @@
+.\lpc43xx_uart.o: lpc43xx_uart.c
+.\lpc43xx_uart.o: lpc43xx_uart.h
+.\lpc43xx_uart.o: lpc43xx.h
+.\lpc43xx_uart.o: .\core_cm0.h
+.\lpc43xx_uart.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\lpc43xx_uart.o: .\core_cmInstr.h
+.\lpc43xx_uart.o: .\core_cmFunc.h
+.\lpc43xx_uart.o: system_LPC43xx.h
+.\lpc43xx_uart.o: lpc_types.h
+.\lpc43xx_uart.o: lpc43xx_cgu.h
+.\lpc43xx_uart.o: lpc43xx_libcfg_default.h

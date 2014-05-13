@@ -2,9 +2,9 @@
 .\spifi\progblobs.o: progblobs.h
 .\spifi\progblobs.o: exec.h
 .\spifi\progblobs.o: ..\..\common\chirp.hpp
-.\spifi\progblobs.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
-.\spifi\progblobs.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
-.\spifi\progblobs.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\stdarg.h
+.\spifi\progblobs.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\spifi\progblobs.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
+.\spifi\progblobs.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdarg.h
 .\spifi\progblobs.o: ..\..\common\link.h
 .\spifi\progblobs.o: ..\libpixy\pixy_init.h
 .\spifi\progblobs.o: ..\libpixy\lpc_types.h
@@ -14,7 +14,7 @@
 .\spifi\progblobs.o: ..\libpixy\core_cm4.h
 .\spifi\progblobs.o: ..\libpixy\core_cmInstr.h
 .\spifi\progblobs.o: ..\libpixy\core_cmFunc.h
-.\spifi\progblobs.o: C:\Users\Matthias\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm4_simd.h
+.\spifi\progblobs.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm4_simd.h
 .\spifi\progblobs.o: ..\libpixy\system_LPC43xx.h
 .\spifi\progblobs.o: ..\libpixy\debug.h
 .\spifi\progblobs.o: ..\libpixy\lpc43xx_adc.h
@@ -39,11 +39,11 @@
 .\spifi\progblobs.o: ..\libpixy\cameravals.h
 .\spifi\progblobs.o: conncomp.h
 .\spifi\progblobs.o: ..\..\common\blob.h
-.\spifi\progblobs.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\assert.h
-.\spifi\progblobs.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\math.h
+.\spifi\progblobs.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\assert.h
+.\spifi\progblobs.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\math.h
 .\spifi\progblobs.o: ..\..\common\blobs.h
 .\spifi\progblobs.o: ..\..\common\colorlut.h
-.\spifi\progblobs.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\inttypes.h
+.\spifi\progblobs.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\inttypes.h
 .\spifi\progblobs.o: ..\..\common\qqueue.h
 .\spifi\progblobs.o: ..\libpixy\serial.h
 .\spifi\progblobs.o: ..\libpixy\iserial.h

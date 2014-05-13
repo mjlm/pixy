@@ -229,10 +229,11 @@ loop5A
 		NOP
 		NOP
 
-		LDRB 	r4, [r0] // green 	 
+		LDRB 	r3, [r0] // green 	 
 		// cycle 
 		//SUBS	r3, r4   // blue-green
 		ADDS	r3, r4   //MJLM: ADD blue and green, rather than subtracting them, to retain luminance info.
+		SUBS	r3, #127 //MJLM: added line to subtract 127 to go back to -127:127 scale
 		ASRS    r3, #1   // reduce 9 to 8 bits arithmetically
 		STRB    r3,	[r1] // store blue-green
 		// cycle 
@@ -321,15 +322,16 @@ $lx		LDRB 	r5, [r0, r4] // load green pixel
 $lx		LEXT	$rx
 $lx		RED
 		// cycle
-		// SUBS	r6, r5   // red-green
+		//SUBS	r6, r5   // red-green
 		ADDS	r6, r5   //MJLM: ADD red and green, rather than subtracting them, to retain luminance info.
+		SUBS	r6, #127 //MJLM: added line to subtract 127 to go back to -127:127 scale
 		ASRS	r6, #1	 // reduce 9 to 8 bits arithmetically
 		LSLS	r6, #24  // shift red-green and get rid of higher-order bits
 		LSRS	r6, #16  // shift red-green back, make it the higher 8 bits of the index
 		LDRB	r5, [r3, r4] // load blue-green val
 		// cycle
 		ORRS	r5, r6   // form 16-bit index
-		LDRB	r1, [r2, r5] // load lut val
+		LDRB	r1, [r2, r5] // load lut val mjlm: ldrb ra, [rb, rc] loads into ra from address rb plus shift rc. here, it loads from lut (r2), shifted by the hue index in r5.
 		// cycle
 		ADDS 	r4, #1 // inc col 
 		// *** PIXEL SYNC

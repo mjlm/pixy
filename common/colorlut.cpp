@@ -20,7 +20,9 @@
 #endif
 #include <stdlib.h>
 #include <math.h>
+#include "pixy_init.h"
 #include "colorlut.h"
+
 
 
 float sign(float val)
@@ -88,7 +90,7 @@ ColorLUT::~ColorLUT()
 int ColorLUT::generate(ColorModel *model, const Frame8 &frame, const RectA &region)
 {
     Fpoint meanVal;
-    float angle, pangle, pslope, meanSat; //mm angle etc. prob refers to u-v-space, not image space...
+    float angle, pangle, pslope, meanSat; //mm angle etc. refers to u-v-space, not image space...
     float yi, istep, s, xsat, sat;
     int result;
 
@@ -193,8 +195,10 @@ void ColorLUT::map(const Frame8 &frame, const RectA &region)
             g1 = pixels[x - 1];
             g2 = pixels[-frame.m_width + x];
             b = pixels[-frame.m_width + x - 1];
-            u = r-g1;
-            v = b-g2;
+//            u = r-g1;
+//            v = b-g2;
+            u = r+g1-127; //mm changed from minus to plus
+            v = b+g2-127; //mm changed from minus to plus
             u >>= 1;
             v >>= 1;
             m_hpixels[count].m_u = u;
@@ -288,18 +292,41 @@ void ColorLUT::add(const ColorModel *model, uint8_t modelIndex)
     uint32_t i;
     HuePixel p;
 
-    if (model->m_hue[0].m_slope==0.0f)
-        return;
+// MM: Commented out because we probably don't want to skip models without hue....	
+//    if (model->m_hue[0].m_slope==0.0f)
+//        return;
 
     for (i=0; i<CL_LUT_SIZE; i++)
     {
         p.m_v = (int8_t)(i&0xff);
         p.m_u = (int8_t)(i>>8);
-        if (((m_lut[i]&0x07)==0 || (m_lut[i]&0x07)>=modelIndex) &&
-                checkBounds(model, &p))
-            m_lut[i] = modelIndex;
+			
+			
+		if (p.m_v<-50 || p.m_u<-50)
+            m_lut[i] = 1;
+		else
+			m_lut[i] = 0;
+//        else if (((m_lut[i]&0x07)==0 || (m_lut[i]&0x07)>=modelIndex) &&
+//                checkBounds(model, &p))
+//            m_lut[i] = modelIndex;
+				
 			//mm m_lut is an array with CL_LUT_SIZE entries. I think it is a matrix in u-v-space where the value at each point indicates to which model that point in u-v-space belongs...
-    }
+    //mm We change the lut generation code such that there is only one signature (number 1),
+		// and this signature contains the bright values:
+//        if (p.m_v > -50 || p.m_u > -50)
+//            m_lut[i] = 1;
+//				else
+//					  m_lut[i] = 0;
+				
+//				if (i%1000==0)
+//						cprintf("i%1d v%1d u%d mlut%d ", i, p.m_v, p.m_u, m_lut[i]);
+//				if (i%1000==0)
+//						cprintf("\n");
+//		
+		
+		}
+		cprintf("MJLMout model index %5.5d\n", modelIndex);
+		cprintf("MJLMout asm test 2");
 }
 
 bool ColorLUT::checkBounds(const ColorModel *model, const HuePixel *pixel)

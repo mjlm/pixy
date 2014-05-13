@@ -1,0 +1,12 @@
+.\smlink.o: smlink.c
+.\smlink.o: lpc43xx.h
+.\smlink.o: .\core_cm0.h
+.\smlink.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\smlink.o: .\core_cmInstr.h
+.\smlink.o: .\core_cmFunc.h
+.\smlink.o: system_LPC43xx.h
+.\smlink.o: chirp.h
+.\smlink.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
+.\smlink.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdarg.h
+.\smlink.o: smlink.h
+.\smlink.o: pixyvals.h

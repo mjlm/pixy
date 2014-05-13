@@ -1,0 +1,13 @@
+.\debug_frmwrk.o: debug_frmwrk.c
+.\debug_frmwrk.o: debug_frmwrk.h
+.\debug_frmwrk.o: lpc43xx_uart.h
+.\debug_frmwrk.o: lpc43xx.h
+.\debug_frmwrk.o: .\core_cm0.h
+.\debug_frmwrk.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\debug_frmwrk.o: .\core_cmInstr.h
+.\debug_frmwrk.o: .\core_cmFunc.h
+.\debug_frmwrk.o: system_LPC43xx.h
+.\debug_frmwrk.o: lpc_types.h
+.\debug_frmwrk.o: lpc43xx_scu.h
+.\debug_frmwrk.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdarg.h
+.\debug_frmwrk.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h

@@ -1,0 +1,13 @@
+.\platform_config.o: platform_config.c
+.\platform_config.o: LPC43xx.h
+.\platform_config.o: .\core_cm4.h
+.\platform_config.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\platform_config.o: .\core_cmInstr.h
+.\platform_config.o: .\core_cmFunc.h
+.\platform_config.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm4_simd.h
+.\platform_config.o: system_LPC43xx.h
+.\platform_config.o: platform_config.h
+.\platform_config.o: lpc43xx_scu.h
+.\platform_config.o: lpc43xx_cgu.h
+.\platform_config.o: lpc_types.h
+.\platform_config.o: spifi_rom_api.h

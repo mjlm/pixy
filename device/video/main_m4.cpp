@@ -63,7 +63,7 @@ int main(void)
 	ptLoadParams();
 	exec_addProg(&g_progPt);
 	exec_addProg(&g_progVideo, true);
-	exec_loop();
+	exec_loop(); //mm frame grabbing loop?
 #endif  
 
 #if 0

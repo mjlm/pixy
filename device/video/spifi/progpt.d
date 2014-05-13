@@ -2,9 +2,9 @@
 .\spifi\progpt.o: progpt.h
 .\spifi\progpt.o: exec.h
 .\spifi\progpt.o: ..\..\common\chirp.hpp
-.\spifi\progpt.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
-.\spifi\progpt.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
-.\spifi\progpt.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\stdarg.h
+.\spifi\progpt.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\spifi\progpt.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
+.\spifi\progpt.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdarg.h
 .\spifi\progpt.o: ..\..\common\link.h
 .\spifi\progpt.o: ..\libpixy\pixy_init.h
 .\spifi\progpt.o: ..\libpixy\lpc_types.h
@@ -14,7 +14,7 @@
 .\spifi\progpt.o: ..\libpixy\core_cm4.h
 .\spifi\progpt.o: ..\libpixy\core_cmInstr.h
 .\spifi\progpt.o: ..\libpixy\core_cmFunc.h
-.\spifi\progpt.o: C:\Users\Matthias\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm4_simd.h
+.\spifi\progpt.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include\core_cm4_simd.h
 .\spifi\progpt.o: ..\libpixy\system_LPC43xx.h
 .\spifi\progpt.o: ..\libpixy\debug.h
 .\spifi\progpt.o: ..\libpixy\lpc43xx_adc.h
@@ -38,11 +38,11 @@
 .\spifi\progpt.o: ..\..\common\pixytypes.h
 .\spifi\progpt.o: ..\libpixy\cameravals.h
 .\spifi\progpt.o: ..\..\common\qqueue.h
-.\spifi\progpt.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\inttypes.h
+.\spifi\progpt.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\inttypes.h
 .\spifi\progpt.o: ..\..\common\blobs.h
 .\spifi\progpt.o: ..\..\common\blob.h
-.\spifi\progpt.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\assert.h
-.\spifi\progpt.o: C:\Users\Matthias\Keil_v5\ARM\ARMCC\bin\..\include\math.h
+.\spifi\progpt.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\assert.h
+.\spifi\progpt.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\math.h
 .\spifi\progpt.o: ..\..\common\colorlut.h
 .\spifi\progpt.o: ..\libpixy\spi.h
 .\spifi\progpt.o: ..\libpixy\lpc43xx_ssp.h

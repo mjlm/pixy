@@ -1,0 +1,9 @@
+.\m0\exec_m0.o: ..\libpixy\exec_m0.c
+.\m0\exec_m0.o: ..\libpixy\pixyvals.h
+.\m0\exec_m0.o: ..\libpixy\chirp.h
+.\m0\exec_m0.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\m0\exec_m0.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
+.\m0\exec_m0.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdarg.h
+.\m0\exec_m0.o: ..\libpixy\exec_m0.h
+.\m0\exec_m0.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\inttypes.h
+.\m0\exec_m0.o: ..\libpixy\rls_m0.h
